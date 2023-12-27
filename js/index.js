@@ -5,7 +5,7 @@ const closeButton = document.querySelector("#close");
 document.querySelector("#open").addEventListener("click", function () {
   menu.style.display = "flex";
   closeButton.style.display = "inline";
-  menu.style.animation = "animarMenuAbrir 2s"
+  menu.style.animation = "animarMenuAbrir 1s"
   menu.addEventListener("animationend", function () {
   menu.style.display = "flex";
   closeButton.style.display = "inline";

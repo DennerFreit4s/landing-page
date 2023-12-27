@@ -102,7 +102,6 @@ body {
   background-color: rgb(0, 0, 0);
   width: auto;
   height: 100%;
-  animation: animarMenuAbrir 2s;
 }
 #menuNav > div {
   display: flex;
