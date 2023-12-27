@@ -1,0 +1,569 @@
+:root {
+  --corPrimaria: black;
+  --corSecundaria: white;
+  --font: "Roboto";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font);
+  background-color: var(--corPrimaria);
+  color: var(--corSecundaria);
+  width: 100%;
+  height: 100%;
+}
+
+/* Cabecalho */
+
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 5px;
+  height: 10%;
+  width: auto;
+  border-bottom: 2px solid gray;
+  padding: 5px;
+  gap: 20px;
+}
+.cabecalho div {
+  display: flex;
+  align-items: center;
+}
+.cabecalho div > img {
+  height: 50px;
+  width: auto;
+}
+.cabecalho div > h1 {
+  font-size: 20px;
+  margin-left: 20px;
+}
+.menuLateral {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: var(--corSecundaria);
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 30px;
+  margin-right: 20px;
+}
+.menuLateral:hover {
+  background-color: rgba(255, 255, 255, 0.171);
+  border: 1px solid white;
+}
+.nav {
+  display: none;
+}
+#open {
+  display: block;
+}
+#close {
+  display: none;
+  width: 20%;
+  height: auto;
+  margin-top: 10px;
+  padding: 3px;
+  margin-left: 4%;
+  border: 1px solid white;
+}
+#menuNav > .nav {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-top: 30px;
+  margin-left: 10%;
+  gap: 30px;
+  color: var(--corSecundaria);
+}
+.itemNav {
+  border: 1px solid white;
+  width: 40%;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+#menuNav > .nav > .itemNav:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: gray;
+}
+#menuNav {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  transition: transform 0.3s ease;
+  z-index: 1;
+  background-color: rgb(0, 0, 0);
+  width: auto;
+  height: 100%;
+  animation: animarMenuAbrir 2s;
+}
+#menuNav > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+#menuNav > div > h1 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+@keyframes animarMenuAbrir {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(auto);
+  }
+}
+@keyframes animarMenuFechar {
+  from {
+    transform: translateX(auto);
+  }
+  to {
+    transform: translateX(-300px);
+  }
+}
+/* Menu Principal */
+
+.conteudoPrincipal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.banner {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+}
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  gap: 10px;
+  animation: animarTexto 3s;
+}
+.conteudo > h1 {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.conteudo > p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.conteudo > button {
+  width: 60%;
+  border-radius: 100px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+  font-weight: bold;
+}
+.conteudo > button:hover {
+  background-color: gray;
+  color: var(--corSecundaria);
+  border: 1px solid white;
+}
+.imagemSecao1 {
+  max-width: 100%;
+  max-height: auto;
+  transform: scale(0.8);
+  animation: animarImagem 3s;
+}
+@keyframes animarTexto {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes animarImagem {
+  from {
+    transform: translateY(30px) scale(1);
+  }
+  to {
+    transform: translateY(0px) scale(0.8);
+  }
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+  height: 100%;
+  width: 100%;
+}
+
+.games .conteudo > button {
+  background-color: var(--corPrimaria);
+  color: var(--corSecundaria);
+}
+.games .conteudo > button:hover {
+  background-color: gray;
+  color: var(--corSecundaria);
+  border: 1px solid black;
+}
+.secaoJogos {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100%;
+  gap: 20px;
+  animation: animarTexto 3s;
+}
+
+.jogo {
+  max-width: 40%;
+  max-height: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.jogo > p {
+  margin-top: 6px;
+  font-weight: bold;
+}
+.imageJogo {
+  max-width: 80%;
+  max-height: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+.imageJogo:hover {
+  transform: scale(1.1);
+}
+.formulario {
+  flex-direction: column;
+  gap: 15px;
+  width: 80%;
+  height: 100%;
+  margin-bottom: 10px;
+}
+.formulario > p {
+  line-height: 1.5;
+}
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  gap: 10px;
+}
+form > input {
+  max-width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0 solid transparent;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--corSecundaria);
+}
+form > input:focus::placeholder {
+  opacity: 0;
+}
+form > button {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+  font-weight: 700;
+  padding: 2px;
+}
+form > button:hover {
+  background-color: gray;
+  color: var(--corSecundaria);
+  border: 1px solid white;
+}
+/*rodape */
+
+.rodape {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  border-top: 5px solid gray;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.secaoLinks {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+  border-top: 1px solid rgba(189, 188, 188, 0.2);
+  border-bottom: 1px solid rgba(189, 188, 188, 0.2);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.itensRodape {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 2;
+}
+.itensRodape a {
+  color: gray;
+  text-decoration: none;
+}
+.itensRodape a:hover {
+  color: rgb(214, 214, 214);
+}
+.logoRodape {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+.logoRodape > img {
+  max-width: 12%;
+  max-height: auto;
+  margin-right: 15px;
+}
+.logoRodape > h1 {
+  font-size: 25px;
+}
+
+@media screen and (min-width: 950px) {
+  #open {
+    display: none;
+  }
+  .cabecalho > div > h1 {
+    font-size: 20px;
+  }
+  .cabecalho > div > img {
+    max-width: 8%;
+    height: auto;
+  }
+  .nav {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+    gap: 30px;
+    height: auto;
+  }
+  .itemNav {
+    border: 0;
+    border-radius: 30px;
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    padding: 15px;
+  }
+  .itemNav:hover {
+    background-color: rgba(185, 185, 185, 0.733);
+  }
+
+  .banner {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .conteudo {
+    width: 100%;
+    align-items: center;
+  }
+  .conteudo > button {
+    width: 40%;
+    font-size: 15px;
+  }
+  .conteudo > h1 {
+    font-size: 30px;
+  }
+  .conteudo > p {
+    font-size: 25px;
+  }
+  .imagemSecao1 {
+    width: 100%;
+    transform: scale(0.8);
+  }
+
+  .games > .conteudo > p {
+    width: 80%;
+  }
+  .secaoJogos {
+    width: 100%;
+  }
+  .jogos {
+    width: 100%;
+    height: 100%;
+  }
+  .jogo > p {
+    font-size: 15px;
+  }
+  .imageJogo {
+    width: 80%;
+    height: 80%;
+  }
+
+  .formulario {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 500px;
+    gap: 20px;
+  }
+  .formulario > h1 {
+    font-size: 30px;
+  }
+  .formulario > p {
+    font-size: 20px;
+    width: 70%;
+    line-height: 1.5;
+  }
+  form {
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+  }
+  form > input {
+    width: 60%;
+    height: 100%;
+    font-size: 15px;
+  }
+  form > button {
+    width: 10%;
+    font-size: 15px;
+  }
+  .logoRodape > img {
+    max-width: 7%;
+    max-height: auto;
+    margin-right: 15px;
+  }
+  .logoRodape > h1 {
+    font-size: 25px;
+  }
+  .itensRodape a {
+    font-size: 15px;
+  }
+  .rodape p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .cabecalho > div > h1 {
+    font-size: 30px;
+  }
+  .cabecalho > div > img {
+    max-width: 10%;
+  }
+  .itemNav {
+    font-size: 25px;
+  }
+  .jogo > p {
+    font-size: 20px;
+  }
+  .itensRodape a {
+    font-size: 20px;
+  }
+  .rodape p {
+    font-size: 20px;
+  }
+  form > input {
+    font-size: 18px;
+  }
+  form > button {
+    width: 10%;
+    font-size: 18px;
+  }
+}
+@media (min-width:2560px) {
+  .cabecalho > div > h1 {
+    font-size: 40px;
+  }
+  .cabecalho > div > img {
+    max-width: 15%;
+  }
+  .itemNav {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .conteudo > button {
+    width: 40%;
+    font-size: 30px;
+  }
+  .conteudo > h1 {
+    font-size: 60px;
+  }
+  .conteudo > p {
+    font-size: 50px;
+  }
+
+  .jogo > p {
+    font-size: 30px;
+  }
+
+  .formulario > h1 {
+    font-size: 60px;
+  }
+  .formulario > p {
+    font-size: 40px;
+  }
+  form > input {
+    font-size: 30px;
+  }
+  form > button {
+    font-size: 30px;
+  }
+  .logoRodape > img {
+    max-width: 7%;
+    margin-right: 15px;
+  }
+  .logoRodape > h1 {
+    font-size: 50px;
+  }
+  .itensRodape a {
+    font-size: 30px;
+  }
+  .rodape p {
+    font-size: 30px;
+  }
+}
