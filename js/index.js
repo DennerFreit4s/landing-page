@@ -4,11 +4,11 @@ const closeButton = document.querySelector("#close");
 
 document.querySelector("#open").addEventListener("click", function () {
   menu.style.display = "flex";
-  closeButton.style.display = "inline";
+  closeButton.style.display = "flex";
   menu.style.animation = "animarMenuAbrir 1s"
   menu.addEventListener("animationend", function () {
   menu.style.display = "flex";
-  closeButton.style.display = "inline";
+  closeButton.style.display = "flex";
   });
 });
 document.querySelector("#close").addEventListener("click", function () {
