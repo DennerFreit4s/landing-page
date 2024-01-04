@@ -88,7 +88,7 @@ body {
   cursor: pointer;
 }
 #menuNav > .nav > .itemNav:hover {
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
   background-color: var(--corTerciaria);
 }
